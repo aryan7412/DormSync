@@ -1,19 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Landing from './components/Landing';
+import Login from './pages/Login';
 
 function App() {
+  const [role, setRole] = useState(null); // 'admin' or 'student'
+
   return (
-    <div className="flex items-center justify-center h-screen bg-black text-white px-4">
-      <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">🚧 DormSync</h1>
-        <p className="text-lg sm:text-xl text-gray-300 mb-6">
-          Dormitory Room & Bed Management System
-        </p>
-        <p className="text-md sm:text-lg text-gray-400 italic">
-          Project structure ready. Feature rollout coming soon...
-        </p>
-      </div>
+    <div>
+      {!role ? <Login setRole={setRole} /> : <Landing role={role} />}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
