@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Landing from './components/Landing';
+import All from './components/All';
 import Login from './pages/Login';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      {!role ? <Login setRole={setRole} /> : <Landing role={role} />}
+      {!role ? <Login setRole={setRole} /> : <All role={role} />}
     </div>
   );
 }

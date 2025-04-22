@@ -8,11 +8,8 @@ function AdminNavbar() {
       <div className='flex flex-row'>
         <img src="/Logo_Dorm_Sync.png" alt="Logo" className='h-12 w-12' />
         <div className='flex flex-col pt-3'>
-          <img src="/Logo_Line.png" alt="Logo_Name" className='h-3 w-16 pl-3'/>
-          <img src="/Logo_Tagline.png" alt="Logo_Tagline" className='h-5 w-20' />
         </div>
       </div>
-
       <div className="flex gap-6 items-center">
         {links.map((link) => (
           <a
