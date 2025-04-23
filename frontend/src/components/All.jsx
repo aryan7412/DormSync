@@ -1,18 +1,18 @@
 import React from 'react';
 import StudentNavbar from './StudentNavbar';
-import AdminNavbar from './AdminNavbar';
 import Landing from './Landing';
 import AboutUs from './AboutUs'
 import BookingOptions from './BookingOptions';
+import Footer from './Footer';
 
 function All({ role }) {
   return (
     <>
-      {role === 'student' && <StudentNavbar />}
-      {role === 'admin' && <AdminNavbar />}
+      <StudentNavbar />
       <Landing />
       <BookingOptions />
       <AboutUs/>
+      <Footer />
     </>
   );
 }

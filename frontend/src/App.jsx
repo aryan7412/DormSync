@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import All from './components/All';
-import Login from './pages/Login';
+import Zostel from './pages/Zostel';
+import Dormitory from './pages/Dormitory';
+import Home from './pages/Home';
+import { Routes,Route } from 'react-router-dom';
 
 function App() {
-  const [role, setRole] = useState(null); // 'admin' or 'student'
-
   return (
-    <div>
-      {!role ? <Login setRole={setRole} /> : <All role={role} />}
+    <div>  
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/zostel" element={<Zostel />} />
+        <Route path="/dormitory" element={<Dormitory />} />
+      </Routes>
     </div>
   );
 }
