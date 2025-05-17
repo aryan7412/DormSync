@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/Logo_Dorm_Sync.png'; // Update with your logo path
+import logo from '/Logo_Dorm_Sync.png';
 
 const Footer = () => {
   return (
@@ -20,6 +20,7 @@ const Footer = () => {
           <span className="text-white font-semibold mb-2">Important Links</span>
           <Link to="/" className="hover:text-[#39d5ff] transition">Home</Link>
           <Link to="/zostel" className="hover:text-[#39d5ff] transition">Zostel</Link>
+          <Link to="/hostel" className="hover:text-[#39d5ff] transition">Zostel</Link>
           <Link to="/dormitory" className="hover:text-[#39d5ff] transition">Dormitory</Link>
           <Link to="/about" className="hover:text-[#39d5ff] transition">About</Link>
           <Link to="/contact" className="hover:text-[#39d5ff] transition">Contact</Link>

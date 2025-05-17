@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import { useNavigate } from 'react-router-dom';
+import Button from './Button';
 
 const TiltCard = ({ title, desc, buttonText, to, label }) => {
   const tiltRef = useRef(null);
@@ -29,12 +30,7 @@ const TiltCard = ({ title, desc, buttonText, to, label }) => {
         <p className="text-sm text-gray-300 italic mb-3">{label}</p>
         <p className="text-gray-400 text-base leading-relaxed">{desc}</p>
       </div>
-      <button
-        onClick={() => navigate(to)}
-        className="mt-6 px-5 py-2 bg-[#39d5ff] hover:bg-[#2bb9de] text-black font-semibold rounded-xl transition"
-      >
-        {buttonText}
-      </button>
+      <Button to={to} buttonText={buttonText} />
     </div>
   );
 };
@@ -59,6 +55,13 @@ const BookingOptions = () => {
           desc="Dormitories offer practical, shared spaces at an affordable rate. Ideal for students, solo travelers, and groups looking for basic, no-frills accommodation that doesn't compromise on comfort."
           buttonText="Book Dormitory"
           to="/dormitory"
+        />
+        <TiltCard
+          title="Hostel"
+          label="Affordable stays for travelers"
+          desc="Hostels provide budget-friendly accommodation with shared or private rooms. Perfect for backpackers, students, and social travelers seeking a comfortable and communal environment."
+          buttonText="Book Hostel"
+          to="/hostel"
         />
       </div>
     </div>

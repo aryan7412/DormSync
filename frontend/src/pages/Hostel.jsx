@@ -1,14 +1,14 @@
 import React from 'react'
-import Checkin from '../components/CheckIn'
 import StudentNavbar from '../components/StudentNavbar'
+import Checkin from '../components/CheckIn'
 
-function Zostel() {
+function Hostel() {
   return (
     <div>
       <StudentNavbar />
-      <Checkin to="/" buttonText="Find Zostel"/>
+      <Checkin to="/" buttonText="Find Hostel"/>
     </div>
   )
 }
 
-export default Zostel
+export default Hostel

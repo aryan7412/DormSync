@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function StudentNavbar() {
   const isStudent = true;
-  const studentLinks = ['Home', 'Zostel', 'Dormitory'];
+  const studentLinks = ['Home', 'Zostel', 'Dormitory','Hostel'];
 
   return (
     <nav className="bg-black text-[#39d5ff] p-4 flex justify-between">
