@@ -1,31 +1,37 @@
-import express from "express";
-import cors from "cors";
+import connectDB from "./db/index.js";
+import dotenv from 'dotenv'
 
-const app = express();
 
-app.use(cors()); 
-app.use(express.json()); 
+dotenv.config({
+    path: './env'
+})
 
-app.get("/", (req, res) => {
-  res.send("Server is ready");
-});
+connectDB()
 
-app.post("/api/login", (req, res) => {
-  const { username, email, password, age } = req.body;
 
-  if (
-    email === "admin@example.com" &&
-    username === "admin" &&
-    password === "admin123" &&
-    parseInt(age) >= 18
-  ) {
-    return res.json({ role: "admin", success: true });
-  } else {
-    return res.json({ role: "student", success: true });
-  }
-});
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+
+
+
+
+
+/* FIRST APPROACH
+import express from 'express'
+const app = express()
+
+;(async ()=>{
+    try {
+        await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
+        app.on("Error",(e)=>{
+            console.log("Error: ",e)
+            throw e
+        })
+        app.listen(process.env.PORT,()=>{
+            console.log(`App is Listening on ${process.env.PORT}`)
+        })
+    } catch (error) {
+        console.log("Error: ",error)
+        throw error
+    }
+})()
+*/
