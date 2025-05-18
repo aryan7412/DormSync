@@ -1,6 +1,6 @@
 import React from 'react'
-import Checkin from '../components/CheckIn'
-import StudentNavbar from '../components/StudentNavbar'
+import Checkin from '../components/CheckIn.jsx'
+import StudentNavbar from '../components/StudentNavbar.jsx'
 
 function Zostel() {
   return (
