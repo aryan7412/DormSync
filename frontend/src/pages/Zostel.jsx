@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkin from '../components/CheckIn.jsx'
+import Checkin from '../components/Checkin.jsx'
 import StudentNavbar from '../components/StudentNavbar.jsx'
 
 function Zostel() {
