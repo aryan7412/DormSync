@@ -27,9 +27,18 @@ function StudentNavbar() {
           ))}
       </div>
 
-      <div className="flex items-center">
-        <Link to="/logout" className="bg-gradient-to-r from-[#39d5ff] to-[#00C9FF] text-black font-medium text-sm px-4 py-1.5 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-          Logout
+      <div className="flex items-center gap-4">
+        <Link
+          to="/login"
+          className="bg-gradient-to-r from-[#39d5ff] to-[#00C9FF] text-black font-medium text-sm px-4 py-1.5 rounded-lg shadow-md transform hover:scale-105 transition duration-300"
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="bg-transparent border border-[#39d5ff] text-[#39d5ff] font-medium text-sm px-4 py-1.5 rounded-lg hover:bg-[#00C9FF] hover:text-black transition duration-300"
+        >
+          Signup
         </Link>
 
       </div>

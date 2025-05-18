@@ -37,7 +37,7 @@ const TiltCard = ({ title, desc, buttonText, to, label }) => {
 
 const BookingOptions = () => {
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4 py-6">
+    <div className="bg-black flex flex-col items-center justify-center px-4 py-6">
       <h2 className="text-3xl md:text-4xl text-white font-bold mb-8 text-center font-[Orbitron]">
         Choose Your Stay
       </h2>
