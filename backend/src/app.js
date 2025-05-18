@@ -13,4 +13,12 @@ app.use(express.urlencoded({extended:true,limit:'16kb'}))
 app.use(express.static('public'))
 app.use(cookieParser())
 
+
+//import Routes
+import signupRouter from './routes/signup.routes.js'
+
+//routes declaration
+app.use('/api/v1/signup',signupRouter)
+
+
 export default app
