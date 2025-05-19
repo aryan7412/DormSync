@@ -1,9 +1,9 @@
 import mongoose,{Schema} from "mongoose"
 import bcrypt from 'bcrypt'
-import jwt, { sign } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 //aggregate paginate
 
-const signupSchema = new Schema(
+const userSchema = new Schema(
     {
         fullName: {
             type: String,
@@ -28,7 +28,7 @@ const signupSchema = new Schema(
             required: true,
             index: true
         },
-        photo: {
+        profileImage: {
             type: String,
             required: true
         },
@@ -54,18 +54,18 @@ const signupSchema = new Schema(
     }
 )
 
-signupSchema.pre("save", async function(next){
+userSchema.pre("save", async function(next){
     if(!this.isModified("password")) return next()
 
-    this.password = bcrypt.hash(this.password,10)
+    this.password = await bcrypt.hash(this.password,10)
     next()
 })
 
-signupSchema.methods.isPasswordCorrect = async function(password){
+userSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password,this.password)
 }
 
-signupSchema.methods.generateAccessToken = function(){
+userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
         {
             _id: this._id,
@@ -81,7 +81,7 @@ signupSchema.methods.generateAccessToken = function(){
         }
     )
 }
-signupSchema.methods.generateRefreshToken = function(){
+userSchema.methods.generateRefreshToken = function(){
     return jwt.sign(
         {
             _id: this._id,
@@ -93,4 +93,4 @@ signupSchema.methods.generateRefreshToken = function(){
     )
 }
 
-export const Signup = mongoose.model("Signup",signupSchema)
+export const User = mongoose.model("User",userSchema)

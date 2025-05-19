@@ -15,10 +15,10 @@ app.use(cookieParser())
 
 
 //import Routes
-import signupRouter from './routes/signup.routes.js'
+import userRouter from './routes/user.routes.js'
 
 //routes declaration
-app.use('/api/v1/signup',signupRouter)
+app.use('/api/v1/user',userRouter)
 
 
 export default app
